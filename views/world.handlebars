@@ -1,0 +1,86 @@
+{{!-- <h1>Log in and Sign up</h1>
+
+<h2>World animation with world rotating in space</h2>
+
+
+<a href="/home">World</a> --}}
+
+<nav>
+    <div class="nav-wrapper">
+      <a href="/home" class="brand-logo">Hello World</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">What's Good</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/about">About</a></li>
+        <li><a href="/developers">Developers</a></li>
+        <li><a href="/first">Log Out</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="circle">
+    <div class="globe"></div>
+</div>
+
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: url("https://s3-cdn.pledgemusic.com/artists/000/003/758/heros/desktop.jpg?1488337587");
+    }
+
+    body {
+        text-align: center;
+    }
+
+    nav {
+        background-color: transparent;
+    }
+
+    .circle {
+        width: 220px;
+        height: 220px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    .globe {
+        width: 256px;
+        height: 256spx;  /*dont remove ( s ) in spx, makes the globe rounder*/
+        background: lightblue;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        border-radius: 50%;   /*makes the square into a circle shape*/
+        box-shadow: -30px -20px 0 0 rgba(0, 0, 0, .1) inset;  /*gives shadpw to circle*/
+        /*box-shadow: -70px -30px 0 0 rgba(0, 0, 0, .1) inset;*/
+        background: url("https://img5.picload.org/image/lwwgwlo/oneday.gif");   /*any gif/image from google of earth*/
+        background-size: cover;                                     /*go back to image of day and night gif*/
+                                                     /*('https://img5.picload.org/image/lwwgwlo/oneday.gif')*/
+
+        -webkit-animation: hello-world 18s infinite linear;
+    }
+
+    @-webkit-keyframes hello-world {
+        from {
+            background-position: -256px center;
+        }
+        to {
+            background-position: left center;  /*try adding new image, keeps skipping when rotating*/
+        }                                           /* cut sizes of images by half..  */
+    }
+</style>
+

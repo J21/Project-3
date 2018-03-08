@@ -1,0 +1,25 @@
+{
+  "name": "projectworld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J21/ProjectWorld.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J21/ProjectWorld/issues"
+  },
+  "homepage": "https://github.com/J21/ProjectWorld#readme",
+  "dependencies": {
+    "compression": "^1.7.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0"
+  }
+}

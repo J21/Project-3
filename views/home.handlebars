@@ -1,0 +1,94 @@
+{{!-- <h1>This is where the world will go</h1> --}}
+{{content}}
+
+
+<a href="/">main page</a>
+
+
+
+
+
+
+
+        {{!-- weather --}}
+<input id = 'city'></input>
+<button id = 'goto'>Go To...</button>
+<div id = 'show'></div>
+
+
+        {{!-- news --}}
+{{!-- <input id = 'goingon'></input> --}}
+{{!-- <button id = 'news'>News</button> --}}
+<div id = 'shownews'></div>
+
+{{!-- =============================
+
+    comment out (input and button ) from News Api
+    added same id's to scripts
+    now when you click on Go to button..  
+     it will render news and weather at same time
+
+=================================== --}}
+
+
+
+<script type="text/javascript">
+
+    //Weather Forecast API    ========================
+    $(document).ready(function() {
+        $("#goto").click(function(){
+            var city = $('#city').val();
+            var key = 'dee84fb58b4bd91a81ff801a553a9e0c';
+
+            $.ajax({
+                url: 'http://api.openweathermap.org/data/2.5/weather',
+                dataType: 'json',
+                type: 'GET',
+                data: {q: city, appid: key, units: 'imperial'},
+
+                success: function(data){
+                    var wf = '';
+                    $.each(data.weather, function(index, val) {
+                        wf += '<p><b>' + data.name + '</b>' + data.main.temp + '&deg;F' + '|' + val.main + ' , ' + val.description   //+ '</b><img scr=' + val.icon + 
+                    });
+                    $('#show').html(wf);
+                }
+            });
+        });
+        //=======================================================================
+
+           // News API .org  news not showing correct on page
+
+        $("#goto").click(function(){
+            var city = $('#city').val();
+            var key = '4dc6306b9abc455aa66413c4ff6054d2';
+
+            $.ajax({
+                //url: 'https://newsapi.org/v2/everything?',
+               // dataType: 'json',
+                //type: 'GET',
+               // data: {q: city, appid: key},
+
+                success: function(data) {
+                    var whatsup = '';
+                   var url = 'https://newsapi.org/v2/everything?q=' + city +
+                    '&apiKey=4dc6306b9abc455aa66413c4ff6054d2';
+                var req = new Request(url);
+                fetch(req)
+                    .then(function(response) {
+                        console.log(whatsup);
+                        //$('#shownews').html(whatsup);*/
+                    });
+                    
+                    $('#shownews').html(whatsup);
+
+                    //news not showing on page when button is click
+                    //console not showing error
+                   }
+                });
+        });
+
+
+    });
+
+</script>
